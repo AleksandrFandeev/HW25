@@ -8,14 +8,14 @@ package org.itstep.step01;
  * @author Nathan Sprague
  * @version V1, 8/2016
  */
-public class ObjectPair {
+ class ObjectPair   {
 
   private final Object first;
   private final Object second;
 
   /**
    * Создаем объект ObjectTuple на базе двух объектов.
-   * 
+   *
    * @param first первый объект
    * @param second второй объект
    */
@@ -36,5 +36,6 @@ public class ObjectPair {
   public String toString() {
     return "<" + first.toString() + ", " + second.toString() + ">";
   }
+
 
 }

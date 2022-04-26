@@ -6,7 +6,7 @@ package org.itstep.step01;
  * @author Nathan Sprague
  * @version V1, 8/2016
  */
-public class ObjectPairDriver {
+public class ObjectPairDriver{
 
     /**
      * Создайте несколько пар стадионов, затем распечатайте название стадиона с наибольшей вместимостью.
@@ -15,14 +15,15 @@ public class ObjectPairDriver {
      */
     public static void main(String[] args) {
 
-        ObjectPair[] stadiums = new ObjectPair[3];
+        ObjectPair[] stadiums =new ObjectPair[3];
+
         stadiums[0] = new ObjectPair("Bridgeforth Stadium", 25000);
         stadiums[1] = new ObjectPair("Michigan Stadium", 109901);
-        stadiums[2] = new ObjectPair("Lane Stadium", "66,233");
+        stadiums[2] = new ObjectPair("Lane Stadium", 66233);
 
         System.out.println(stadiums[0]);
-
         System.out.println(largestStadium(stadiums));
+
     }
 
     /**
@@ -31,10 +32,19 @@ public class ObjectPairDriver {
      * @param stadiums Массив ObjectPairs, где каждая пара содержит название стадиона, за которым следует целое число
      * @return Название стадиона с наибольшей вместимостью
      */
-    public static String largestStadium(ObjectPair[] stadiums) {
+    public static String largestStadium (ObjectPair[] stadiums) {
         // TODO: реализуйте это метод в соответствии с комментариями
-
-        return "";
+        int i;
+        int max=0;
+        int j=0;
+        for ( i = 0; i <stadiums.length ; i++) {
+            if((int)stadiums[i].getSecond()>max){
+                max=(int)stadiums[i].getSecond();
+                j=i;
+            }
+        }
+        return (String) stadiums[j].getFirst();
+        }
     }
 
-}
+
